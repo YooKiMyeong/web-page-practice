@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>standard web page 06</title>
     <style>
+        /*기본 넓이 width는 100% 이므로 100%기준잡을거면 생략가능
+        부모 태그와 자식 태그간에 같은 값을 사용하는 코드가 있으면 부모코드 안에선 생략하고 자식 코드에만 입력*/
         * {margin: 0; padding: 0;}
         #wrap {text-align: center; font-size: 30px; color: #fff;}
         #header {height: 140px; line-height: 140px; background: #ffe1e4;}
@@ -11,6 +13,7 @@
         #content {height: 950px; line-height: 950px; background: #ead5ee;}
         #footer {height: 220px; line-height: 220px; background: #d6ebfd;}
         .contaniner {width: 1100px; margin: 0 auto; height: inherit; background: rgba(0,0,0,0.3);}
+        /*container 에서 height: inheright; = 높이 상속의미 즉, 부모 코드(div id)의 높이 가져오는것*/
     </style>
 </head>
 <body>
