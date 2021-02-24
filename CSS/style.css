@@ -5,26 +5,25 @@
 #skip a:focus { top: 0; } 
 
 /*layout 레이아웃*/
-#wrap { width: 100%; } 
+#wrap {} 
 
-#header { width: 100%; height: 325px; background: url(../img/header_bg.jpg) center top repeat-x;} 
+#header {height: 325px; background: url(../img/header_bg.jpg) center top repeat-x;} 
 /*bckground 에 url 링크 주소도 가능하나 내가 가진 사진 이용시엔 사진 저장소-사진이름 / center top = 넣은 이미지에서 화면비율 키우거나 
 줄여도 특정 부분 고정하여 보여짐 / repeat-x = 화면 비율 줄이거나 늘려도 x축으로만 이미지가 늘어나고 줄어들고 설정*/
-#contents { width: 100%; height: 800px; background: #222; } 
+#contents {} 
 
-#footer { width: 100%; height: 200px; background: #333; } 
+#footer {height: 200px; background: #333; } 
 
 /*contents*/
-#cont_nav { width: 100%; height: 200px; background: #333; } 
+#cont_nav {} 
 #cont_tit { width: 100%; height: 200px; background: #444; } 
 #cont_ban { width: 100%; height: 200px; background: #555; } 
 #cont_cont { width: 100%; height: 200px; background: #666; } 
 
 /*container*/
-.container { width: 990px; margin: 0 auto; height: inherit; background: rgba(225, 255, 255, 0.3); } 
+.container {width: 990px; margin: 0 auto; height: inherit; /*background: rgba(225, 255, 255, 0.3);*/ } 
 
 /*header*/
-.header {}
 .header .header-menu {text-align: right;} 
 /*1. header class 안에 header-menu class가 자식으로 있으므로 .header 뒤에 1칸 띄워주기
   2. a tag는 inline 구조이므로 글자 정렬 하고싶으면 부모 속성에다 text-align 입력해줘야함.*/
@@ -55,3 +54,22 @@ padding: 5px 20px 6px 20px; margin-top: -5px;}
 .header .header-icon a.icon2:hover {background-position: -60px -60px;}
 .header .header-icon a.icon3:hover {background-position: -60px -120px;}
 .header .header-icon a.icon4:hover {background-position: -60px -180px;}
+
+/*float: left;로 인한 영역깨짐(height:0;) 방지법
+1. 깨지는 영역에 똑같이 float: left;를 사용한다. -> 결국 모든박스에 입력해줘야해서 사용 안함 
+2. float의 성질을 차단하는 clear: both; 사용 -> 나중에 박스가 많아지고 복잡해졌을때 어떤 영역이 깨졌는지 찾기어려워 사용 안함
+3. float을 사용한 상위 박스한테 overflow: hidden; 사용 -> 많이사용, 완벽한건 아님.
+4. clearfix를 사용 -> 실질적으로 거의 대부분 이걸로 씀 "반응형에서!"*/
+
+/*전체 메뉴*/
+.nav {overflow: hidden; padding: 30px 0;}
+.nav > div {float: left; width: 40%;}
+/* > 사용할경우 바로 다음에오는 첫번째 자식만 자식으로 인정해서 작업*/
+.nav > div:last-child {width: 20%;}
+.nav > div.last {width: 20%;} /*IE9부터 사용 가능.. IE8까지 맞춰야하면 .nav > div.last{} 이런식으로 작성*/
+.nav > div h3 {font-size: 18px; color: #25a2d0; margin-bottom: 4px;}
+.nav > div ol {overflow: hidden;}
+.nav > div ol li {float: left; width: 50%;}
+.nav > div.last ol li {width: 100%;}
+.nav > div ol li a:hover {text-decoration: underline;}
+
