@@ -7,8 +7,9 @@
 /*layout 레이아웃*/
 #wrap { width: 100%; } 
 
-#header { width: 100%; height: 325px; background: #111; } 
-
+#header { width: 100%; height: 325px; background: url(../img/header_bg.jpg) center top repeat-x;} 
+/*bckground 에 url 링크 주소도 가능하나 내가 가진 사진 이용시엔 사진 저장소-사진이름 / center top = 넣은 이미지에서 화면비율 키우거나 
+줄여도 특정 부분 고정하여 보여짐 / repeat-x = 화면 비율 줄이거나 늘려도 x축으로만 이미지가 늘어나고 줄어들고 설정*/
 #contents { width: 100%; height: 800px; background: #222; } 
 
 #footer { width: 100%; height: 200px; background: #333; } 
@@ -21,3 +22,26 @@
 
 /*container*/
 .container { width: 990px; margin: 0 auto; height: inherit; background: rgba(225, 255, 255, 0.3); } 
+
+/*header*/
+.header {}
+.header .header-menu {text-align: right;} 
+/*1. header class 안에 header-menu class가 자식으로 있으므로 .header 뒤에 1칸 띄워주기
+  2. a tag는 inline 구조이므로 글자 정렬 하고싶으면 부모 속성에다 text-align 입력해줘야함.*/
+
+.header .header-menu a {color: #fff; padding: 10px 0px 10px 13px; display: inline-block;}
+/*inline 구조는 padding이 양옆으로만 적용되기때문에 위아래도 적용 원할경우엔 display:block; 으로 속성 변경 가능하나
+이렇게 할경우 메뉴 하나하나 다 블럭이되서 순서가 바뀌고 위치정렬(글자정렬)해주는등 코드가 지저분해 진다.
+그래서 inline 속성 가지면서 동시에 block 속성 부여하는 display: inline-block; 이용하면 1개로 끝*/
+
+.header .header-menu a:hover {color: #666;}
+/*hover = 상호작용, 쉽게말해 마우스 메뉴에 가져다 대면 색이 변하는 동작
+(background-color:원하는색; 으로하면 마우스 가져다댄 부분이 박스형태로 색이 덮여진다.)*/
+
+.header .header-tit {text-align: center;}
+.header .header-tit h1 { background-color: #4aa8d4; font-size: 35px;
+    padding: 5px 20px 6px 20px; display: inline-block; color: #fff; margin-top: 40px;
+font-weight: normal; text-transform: uppercase;}
+.header .header-tit a {display: inline-block; background-color: #2698cb; font-size: 18px; color: #fff;
+padding: 5px 20px 6px 20px; margin-top: -5px;}
+.header .header-icon {}

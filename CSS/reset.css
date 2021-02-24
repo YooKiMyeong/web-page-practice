@@ -7,3 +7,10 @@ p,select,table,th,td,tr,textarea,button,form { margin: 0; padding: 0; }
 /*a link reset*/
 a { color: #222; text-decoration: none; } 
 a:hover { color: #390; } 
+
+/*font reset*/
+body, input, textarea, select, button, table{
+    font-family: 'Roboto', AppleSDgothicNeo-Regular, 'Malgun Gothic', '맑은 고딕', dotum, '돋움', sans-serif;
+} 
+/*폰트패밀리 : a,b,c,d,e,...; 정의해주면 a부터 순차로 내 컴퓨터에 저장되있는 글씨체로 변경해서 보여줌.ex) c부터 있다면 c의 글씨체로
+하지만 맥과 윈도우의 글씨체등의 차이로 상호작용의 틀어짐을 최소화하려면 web font 사용 추천. ex) 구글 폰트에서 링크따오거나 다운받고 연동하기*/
