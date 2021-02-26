@@ -17,7 +17,7 @@
 /*contents*/
 #cont_nav {background-color: #f6fdff;} 
 #cont_tit {background-color: #eaf7fd;} 
-#cont_ban { width: 100%; height: 200px; background: #555; } 
+#cont_ban {background-color: #dceff7;} 
 #cont_cont { width: 100%; height: 200px; background: #666; } 
 
 /*container*/
@@ -65,8 +65,8 @@ padding: 5px 20px 6px 20px; margin-top: -5px;}
 .nav {overflow: hidden; padding: 30px 0;}
 .nav > div {float: left; width: 40%;}
 /* > 사용할경우 바로 다음에오는 첫번째 자식만 자식으로 인정해서 작업*/
-.nav > div:last-child {width: 20%;}
-.nav > div.last {width: 20%;} /*IE9부터 사용 가능.. IE8까지 맞춰야하면 .nav > div.last{} 이런식으로 작성*/
+.nav > div:last-child {width: 20%;}/*last-child 는 IE9부터 사용 가능.. IE8까지 맞춰야하면 .nav > div.last{} 이런식으로 작성*/
+.nav > div.last {width: 20%;} 
 .nav > div h3 {font-size: 18px; color: #25a2d0; margin-bottom: 4px;}
 .nav > div ol {overflow: hidden;}
 .nav > div ol li {float: left; width: 50%;}
@@ -79,3 +79,19 @@ padding: 5px 20px 6px 20px; margin-top: -5px;}
     font-family: 'Gaegu', cursive;}
 .tit .btn {position: absolute; top: 5px; right: 0; width: 60px; height: 60px; background: url(../img/icon.png)
     no-repeat 0 -600px;}
+
+/*Banner*/
+.ban {position: relative; padding: 24px 0 20px;}
+.ban a.prev {position: absolute; left: -80px; top: 60px; width: 43px; height: 43px; background: url(../img/icon.png) no-repeat -150px 0;}
+.ban a.prev:hover {background-position: -193px 0;}
+.ban a.next:hover {background-position: -193px -43px;}
+.ban a.next {position: absolute; right: -80px; top: 60px; width: 43px; height: 43px; background: url(../img/icon.png) no-repeat -150px -43px;}
+.ban ul {overflow: hidden;}
+.ban ul li {float: left; width: 330px;}
+.ban ul li:last-child {text-align: right;} /*IE9 부터 적용*/
+.ban ul li:nth-child(2) {text-align: center;} /*IE9 부터 적용*/
+.ban ul li.ban_img1 {text-align: left;}/*번거롭지만 이렇게하면 모든 버전 적용 가능*/
+.ban ul li.ban_img2 {text-align: center;}
+.ban ul li.ban_img3 {text-align: right;}
+.ban ul li img {border: 4px solid #dcdcdc;}
+.ban ul li img:hover {border-color: #98bcdc;}
